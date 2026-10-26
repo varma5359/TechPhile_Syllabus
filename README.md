@@ -507,4 +507,122 @@ The work is accepted only when all the following are true:
 11. Existing repository content and user changes remain untouched.
 12. A final report documents the actual validation results and output location.
 
+
+
+## Mandatory Set-Wise Question Distribution: Coding, Scenarios, Concepts, and Other Types
+
+### 1. Non-negotiable requirements
+
+Every CSV file must contain:
+- Exactly 300 questions.
+- Exactly 10 sets.
+- Exactly 30 questions per set.
+- One assigned difficulty level only: Beginner, Intermediate, or Advanced.
+- A balanced and deliberate mix of question types in every set.
+
+Apply these rules independently to every CSV file across all 33 categories and three difficulty levels.
+
+Total output: 99 CSV files × 10 sets × 30 questions = 29,700 questions.
+
+### 2. Standard question-type distribution per set
+
+For programming, framework, database, data science, and AI categories, use this default distribution for each set of 30 questions:
+
+| No. | Question type | Questions per set |
+|---|---|---:|
+| 1 | Conceptual / Fundamentals | 5 |
+| 2 | Coding / Code Output | 6 |
+| 3 | Debugging / Error Identification | 4 |
+| 4 | Scenario-Based Questions | 6 |
+| 5 | Practical Application / Problem-Solving | 4 |
+| 6 | Analytical Reasoning / Output Interpretation | 3 |
+| 7 | Best Practices / Performance / Trade-offs | 2 |
+| **Total** | | **30** |
+
+These counts are mandatory for categories where all seven types are applicable. For categories where a type is not appropriate, use the category-specific adaptations below while retaining exactly 30 questions per set.
+
+**Important distinction:** A question may involve code and a scenario, but assign exactly one primary `question_type` to each row. Use the primary skill being tested to decide the classification.
+
+### 3. Required `question_type` values
+
+Use these consistent values in the CSV:
+
+- `Conceptual`
+- `Coding`
+- `Code Output`
+- `Debugging`
+- `Scenario-Based`
+- `Practical Application`
+- `Analytical Reasoning`
+- `Best Practices`
+- `Performance and Optimization`
+- `Query Writing`
+- `Formula`
+- `Calculation`
+- `Algorithm`
+- `Data Interpretation`
+- `Command Interpretation`
+
+Choose the most appropriate type for the category and question. Do not use irrelevant types just to meet a quota.
+
+### 4. Category-specific adaptations
+
+#### A. Programming languages
+
+Categories: Python, Java, JavaScript, C, C++.
+
+Use a mix of:
+- Conceptual fundamentals
+- Coding problems
+- Predict-the-output questions
+- Debugging and error identification
+- Real-world programming scenarios
+- Practical implementation
+- Complexity, memory, or performance questions where appropriate
+
+For each set of 30, aim for:
+- 5 conceptual
+- 6 coding or code-output
+- 4 debugging
+- 6 scenario-based
+- 4 practical application
+- 3 analytical reasoning
+- 2 best-practice or performance
+
+#### B. SQL and databases
+
+Categories: SQL, MySQL, MongoDB.
+
+Replace generic coding questions with query writing, document operations, schema interpretation, or query-output questions where applicable.
+
+Each set should contain:
+- 4 conceptual questions
+- 7 query-writing or command-writing questions
+- 4 query-output or result-interpretation questions
+- 6 scenario-based questions
+- 4 debugging or error-identification questions
+- 3 data interpretation or analytical questions
+- 2 performance, indexing, or best-practice questions
+
+For MongoDB, use appropriate document queries, aggregation pipelines, indexing, and document-model scenarios instead of relational SQL syntax.
+
+#### C. Web technologies and frameworks
+
+Categories: HTML, CSS, React, Django, Flask, FastAPI, Spring Boot, REST APIs.
+
+Each set should cover:
+- Concepts and framework behavior
+- Code or configuration interpretation
+- Debugging
+- Realistic application scenarios
+- Practical implementation
+- Request, response, or data-flow reasoning
+- Security, maintainability, or performance
+
+Use code-based questions where the technology supports them. For HTML and CSS, interpret markup, selectors, layouts, accessibility, and browser behavior rather than inventing programming-language behavior.
+
+#### D. Data analysis and visualization
+
+Categories: NumPy, Pandas, Matplotlib, Seaborn, Excel, Power
+
 **Begin by inspecting the repository and confirming the output destination. Then generate the complete question bank, validate it, repair any failures, and report the verified results.**
